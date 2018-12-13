@@ -23,10 +23,14 @@ class Example(QMainWindow):
         exitAction = QAction(QIcon("rin.png"), "推出", self)
         exitAction.setShortcut("Ctrl+Q")
         exitAction.setStatusTip("退出")
+        exitAction2 = QAction(QIcon("rin.png"), "推出", self)
+        exitAction2.setShortcut("Ctrl+Q")
+        exitAction2.setStatusTip("退出")
 
         # 当我们选中动作，一个除法信号会被发射
         # 信号连接到QApplication的quit()方法
         # 这样就关闭了应用
+        exitAction2.triggered.connect(QApplication.quit)
         exitAction.triggered.connect(QApplication.quit)
 
         self.statusBar()
@@ -36,6 +40,7 @@ class Example(QMainWindow):
         menubar = self.menuBar()
         fileMenu = menubar.addMenu("文件")
         fileMenu.addAction(exitAction)
+        fileMenu.addAction(exitAction2)
 
         self.resize(600, 600)
         self.setWindowTitle("菜单")
