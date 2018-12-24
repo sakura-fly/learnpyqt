@@ -37,6 +37,7 @@ class Table(QWidget):
         tableWidget.clicked.connect(self.playSong)
         # 双击
         tableWidget.doubleClicked.connect(self.playSong)
+        # 禁止编辑
         tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
         # print(
