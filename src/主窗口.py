@@ -1,4 +1,6 @@
 import sys
+
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QMenuBar, QApplication
 
@@ -33,6 +35,7 @@ class Example(QMainWindow):
 
         self.resize(600,600)
         self.setWindowTitle("主窗口")
+        self.setWindowFlags(Qt.SplashScreen)
         self.show()
 
 
